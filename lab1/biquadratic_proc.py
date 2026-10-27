@@ -2,6 +2,7 @@ import sys
 import math
 
 
+# коэффициент из командной строки, иначе ввод с клавиатуры до корректного значения
 def get_coef(index, prompt):
     if index < len(sys.argv):
         try:
@@ -22,6 +23,7 @@ def get_discriminant(a, b, c):
 
 def get_roots(a, b, c):
     D = get_discriminant(a, b, c)
+    # корни относительно t = x²
     square_roots = []
     if a == 0.0:
         if b != 0.0:
@@ -32,6 +34,7 @@ def get_roots(a, b, c):
         sqD = math.sqrt(D)
         square_roots.append((-b + sqD) / (2.0*a))
         square_roots.append((-b - sqD) / (2.0*a))
+    # обратная замена: x = ±√t
     result = []
     for t in square_roots:
         if t == 0.0:

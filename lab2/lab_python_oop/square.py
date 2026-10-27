@@ -6,6 +6,7 @@ class Square(Rectangle):
 
     def __init__(self, side, color):
         self.side = side
+        # квадрат - прямоугольник с равными сторонами
         super().__init__(side, side, color)
 
     def __repr__(self):

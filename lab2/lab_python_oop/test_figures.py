@@ -11,6 +11,7 @@ from lab_python_oop.square import Square
 class TestFigures(unittest.TestCase):
 
     def test_figure_is_abstract(self):
+        # объект абстрактного класса создать нельзя
         with self.assertRaises(TypeError):
             Figure()
 

@@ -3,6 +3,7 @@ import math
 from typing import NamedTuple
 
 
+# алгебраический тип: корни уравнения относительно t = x²
 class SquareRootResult:
     NoRoots = NamedTuple("NoRoots", [])
     OneRoot = NamedTuple("OneRoot", [("root", float)])
@@ -17,6 +18,7 @@ def parse_coef(coef_str):
         return None
 
 
+# повторный ввод через рекурсию вместо цикла
 def read_coef(prompt):
     print(prompt)
     match parse_coef(input()):
@@ -39,6 +41,7 @@ def get_discriminant(a, b, c):
 
 
 def get_square_roots(a, b, c):
+    # A = 0: уравнение B·t + C = 0
     match (a, b, c):
         case (0, 0, 0):
             return SquareRootResult.AnyRoot()
@@ -56,6 +59,7 @@ def get_square_roots(a, b, c):
             return SquareRootResult.NoRoots()
 
 
+# обратная замена: решение x² = t
 def roots_from_square(t):
     match t:
         case 0:

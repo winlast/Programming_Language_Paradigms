@@ -3,6 +3,7 @@ from lab_python_oop.color import FigureColor
 
 
 class Rectangle(Figure):
+    # название фигуры - поле данных класса
     FIGURE_TYPE = 'Прямоугольник'
 
     @classmethod
@@ -12,6 +13,7 @@ class Rectangle(Figure):
     def __init__(self, width, height, color):
         self.width = width
         self.height = height
+        # цвет хранится в объекте класса «Цвет фигуры»
         self.figure_color = FigureColor(color)
 
     def area(self):

@@ -14,6 +14,7 @@ def main():
     print(rectangle)
     print(circle)
     print(square)
+    # вызов метода внешнего пакета numpy
     total_area = numpy.sum([rectangle.area(), circle.area(), square.area()])
     print('Суммарная площадь фигур (numpy.sum): {:.2f}'.format(total_area))
 

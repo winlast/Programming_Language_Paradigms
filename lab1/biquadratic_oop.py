@@ -2,6 +2,7 @@ import sys
 import math
 
 
+# биквадратное уравнение A·x⁴ + B·x² + C = 0
 class BiquadraticEquation:
 
     def __init__(self):
@@ -35,6 +36,7 @@ class BiquadraticEquation:
         c = self.coef_C
         self.discriminant = b*b - 4*a*c
         D = self.discriminant
+        # корни относительно t = x²
         square_roots = []
         if a == 0.0:
             if b != 0.0:
@@ -45,6 +47,7 @@ class BiquadraticEquation:
             sqD = math.sqrt(D)
             square_roots.append((-b + sqD) / (2.0*a))
             square_roots.append((-b - sqD) / (2.0*a))
+        # обратная замена: x = ±√t
         for t in square_roots:
             if t == 0.0:
                 self.roots_list.append(0.0)
